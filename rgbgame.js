@@ -13,7 +13,6 @@ init();
 
 function init() {
     setupModeButtons();
-    // mode buttons event listeners
     setupSquares();
     reset();
     
@@ -46,9 +45,12 @@ function setupModeButtons(){
         modeButtons[i].addEventListener("click", function(){
             modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
+            modeButtons[2].classList.remove("selected");
             this.classList.add("selected");
             if(this.textContent === "Easy") {
                 numSquares = 3;
+            } else if(this.textContent === "Hard") {
+                numSquares = 9;
             } else {
                 numSquares = 6;
             }
